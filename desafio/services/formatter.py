@@ -1,11 +1,25 @@
+import re
 import textwrap
 
-def wrap_text(text: str, width: int) -> str:
-    wrapper = textwrap.TextWrapper(width=width, break_long_words=False, break_on_hyphens=False)
-    return '\n'.join(wrapper.wrap(text))
 
+def wrap_text(text: str, width: int) -> str:
+
+    paragraphs = re.split(r'(\n\s*\n)', text)
+    result = []
+    
+    for part in paragraphs:
+        if re.match(r'\n\s*\n', part):
+            result.append(part)
+        else:
+            wrapper = textwrap.TextWrapper(width=width, break_long_words=False, break_on_hyphens=False)
+            result.append('\n'.join(wrapper.wrap(part)))
+    
+    return ''.join(result)
 
 def justify_line_by_char_count(line: str, width: int) -> str:
+    if not line.strip():
+        return line
+    
     words = line.split()
     if len(words) == 1:
         return words[0].ljust(width)
@@ -24,10 +38,19 @@ def justify_line_by_char_count(line: str, width: int) -> str:
 
     return justified
 
-
 def justify_text(text: str, width: int) -> str:
-    lines = textwrap.wrap(text, width=width, break_long_words=False, break_on_hyphens=False)
+
+    paragraphs = re.split(r'(\n\s*\n)', text)
+    result = []
     
-    justified_lines = [justify_line_by_char_count(line, width) for line in lines[:-1]]
-    justified_lines.append(lines[-1])
-    return '\n'.join(justified_lines)
+    for part in paragraphs:
+        if re.match(r'\n\s*\n', part):
+            result.append(part)
+        else:
+            lines = textwrap.wrap(part, width=width, break_long_words=False, break_on_hyphens=False)
+            justified_lines = [justify_line_by_char_count(line, width) for line in lines[:-1]]
+            if lines:
+                justified_lines.append(lines[-1])
+            result.append('\n'.join(justified_lines))
+    
+    return ''.join(result)
