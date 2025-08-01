@@ -3,7 +3,7 @@ from pydantic import BaseModel
 
 class TextInput(BaseModel):
     text: str
-    width: int
+    width: int = 50
 
 class FormattedText(BaseModel):
     original_text: str
