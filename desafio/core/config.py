@@ -9,9 +9,6 @@ class Settings(BaseSettings):
 
 
     # Segurança
-    SECRET_KEY: str = Field(default="your-secret-key")
-    ALGORITHM: str = Field(default="HS256")
-    ACCESS_TOKEN_EXPIRE_MINUTES: int = Field(default=30)
     ALLOW_ORIGINS: List[Union[HttpUrl, str]] =Field(default=["*"])
     ALLOW_CREDENTIALS: bool =Field(default=True)
     ALLOW_METHODS: List[str] =Field(default=["*"])
