@@ -43,7 +43,7 @@ python main.py
 ### Rodar o servidor via Docker compose:
 
 ```bash
-docker-compose up --build
+docker compose up --build
 ```
 
 
