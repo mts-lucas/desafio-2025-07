@@ -1,6 +1,6 @@
 import unittest
 from fastapi.testclient import TestClient
-from main import start_application
+from core.app import start_application
 
 
 class BaseTestCase(unittest.TestCase):
