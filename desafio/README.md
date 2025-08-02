@@ -37,6 +37,16 @@ cd meu_projeto
 python main.py
 ```
 
+## Executando testes unitários
+
+em seu terminal execute o seguinte comando:
+
+
+```bash
+python -m unittest discover -s tests 
+```
+
+
 A aplicação estará disponível em:
 - http://localhost:8000
 - Documentação interativa: http://localhost:8000/docs
