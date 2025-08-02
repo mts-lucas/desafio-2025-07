@@ -3,6 +3,10 @@
 Este projeto é uma API usando FastAPI.
 
 ## Configuração do Ambiente
+para executar os comandos descritos aqui primeiramente deve se estar neste diretório
+```bash
+cd desafio
+```
 
 ### 1. Criar ambiente virtual
 
@@ -33,9 +37,21 @@ pip install -r requirements.txt
 ### Rodar o servidor de desenvolvimento:
 
 ```bash
-cd meu_projeto
 python main.py
 ```
+
+### Rodar o servidor via Docker compose:
+
+```bash
+docker-compose up --build
+```
+
+
+A aplicação estará disponível em:
+- http://localhost:8000
+- Documentação interativa: http://localhost:8000/docs
+- Documentação alternativa: http://localhost:8000/redoc
+
 
 ## Executando testes unitários
 
@@ -47,21 +63,16 @@ python -m unittest discover -s tests
 ```
 
 
-A aplicação estará disponível em:
-- http://localhost:8000
-- Documentação interativa: http://localhost:8000/docs
-- Documentação alternativa: http://localhost:8000/redoc
-
-
 ## Estrutura do Projeto
 
 ```
 seu_diretorio/
-├── meu_projeto/
+├── desafio/
 |  ├── core/           # Configurações centrais
 |  ├── services/       # funções criticas da regra de negocio
 |  ├── schemas/        # Schemas Pydantic
 |  ├── api/            # Rotas da API
+|  ├── tests/            # Testes unitários da API
 |  └── main.py         # Ponto de entrada
 ├── requirements.txt   # Dependências do projeto
 ├── .env.exemple       # Variáveis de ambiente
