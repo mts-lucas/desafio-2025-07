@@ -27,7 +27,7 @@ jobs:
       - name: Copying configurations
         working-directory: desafio
         run: |
-          cp .env.example .env
+          cp .env.exemple .env
 
       - name: Install Dependencies
         working-directory: desafio
