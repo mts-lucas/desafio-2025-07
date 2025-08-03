@@ -1,9 +1,10 @@
 from pydantic import BaseModel
+from typing import Optional
 
 
 class TextInput(BaseModel):
     text: str
-    width: int = 50
+    width: Optional[int] = 50
 
 class FormattedText(BaseModel):
     original_text: str
