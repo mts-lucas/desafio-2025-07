@@ -1,6 +1,6 @@
-# DEsafio OP2B
+# Desafio OP2B
 
-Este projeto é uma API usando FastAPI.
+Este projeto é uma API usando FastAPI, como parte do processo seletivo da OP2B. Para uma checagem da lista dos endpoints e comentários a respeito do uso da api, checar o seguinte [documento](docs/resolution.md)
 
 ## Configuração do Ambiente
 para executar os comandos descritos aqui primeiramente deve se estar neste diretório
@@ -69,12 +69,15 @@ python -m unittest discover -s tests
 seu_diretorio/
 ├── desafio/
 |  ├── core/           # Configurações centrais
+|  ├── docs/           # Documentacao a respeito do projeto
 |  ├── services/       # funções criticas da regra de negocio
 |  ├── schemas/        # Schemas Pydantic
 |  ├── api/            # Rotas da API
-|  ├── tests/            # Testes unitários da API
+|  ├── tests/          # Testes unitários da API
 |  └── main.py         # Ponto de entrada
 ├── requirements.txt   # Dependências do projeto
 ├── .env.exemple       # Variáveis de ambiente
-└── README.md          # Documentação do projeto
+├── docker-compose.yml # Configuração do docker compose
+├── Dockerfile         # Configuração do docker
+└── README.md          # Documentação inicial do projeto
 ```
